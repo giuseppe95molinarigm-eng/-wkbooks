@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Interior Style Samples</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&family=Bangers&family=Lexend:wght@400;500;600;700&family=Baloo+2:wght@500;600;700;800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+@page { size: 12in 9in; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #888; }
+body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.spread { width: 12in; height: 9in; display: flex; position: relative; overflow: hidden; page-break-after: always; break-after: page; background: #fff; }
+.page { width: 6in; height: 9in; position: relative; overflow: hidden; }
+.page.left  { padding: .7in .75in .8in .6in; }
+.page.right { padding: .7in .6in .8in .75in; }
+.page.full  { padding: 0; }
+/* gutter shadow to read as a book spread */
+.spread::after { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: .5in; transform: translateX(-50%);
+  background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.07) 45%, rgba(0,0,0,.12) 50%, rgba(0,0,0,.07) 55%, rgba(0,0,0,0) 100%); pointer-events: none; z-index: 50; }
+.spread.noshade::after { display: none; }
+p { hyphens: manual; }
+.ph { position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.ph .ph-label { position: absolute; left: 50%; bottom: 14px; transform: translateX(-50%); white-space: nowrap; font: 700 8pt/1 'Nunito', sans-serif; letter-spacing: .08em; text-transform: uppercase; padding: 5px 10px; border-radius: 99px; }
+.ph svg.icon { width: 34%; max-width: 1.6in; height: auto; opacity: .9; }
+
+/* ============ COVER / OVERVIEW ============ */
+.ov { background: #FBF8F2; font-family: 'Nunito', sans-serif; color: #1d2433; padding: .7in .8in; display: block; }
+.ov h1 { font: 800 30pt/1.05 'Baloo 2', sans-serif; letter-spacing: -.01em; }
+.ov .kick { font: 800 9pt/1 'Nunito'; letter-spacing: .18em; text-transform: uppercase; color: #8a8f99; margin-bottom: 10px; }
+.ov .lead { font-size: 12pt; line-height: 1.5; max-width: 7.8in; margin: 10px 0 26px; color: #3b4252; }
+.ov .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: .28in; }
+.ov .card { background: #fff; border-radius: 14px; padding: 18px 18px 16px; box-shadow: 0 1px 0 rgba(0,0,0,.05), 0 6px 18px rgba(20,30,60,.07); }
+.ov .card .tag { font: 800 8pt/1 'Nunito'; letter-spacing: .14em; color: #8a8f99; text-transform: uppercase; }
+.ov .card h2 { margin: 6px 0 4px; font-size: 21pt; line-height: 1.05; }
+.ov .card .feel { font-size: 10pt; color: #59606e; font-style: italic; margin-bottom: 10px; }
+.ov .swatches { display: flex; gap: 6px; margin: 10px 0 12px; }
+.ov .swatches i { width: 30px; height: 30px; border-radius: 8px; display: block; box-shadow: inset 0 0 0 1px rgba(0,0,0,.08); }
+.ov .card ul { list-style: none; font-size: 9.5pt; line-height: 1.45; }
+.ov .card li { padding-left: 14px; position: relative; margin-bottom: 3px; }
+.ov .card li::before { content: "•"; position: absolute; left: 2px; color: #b0b5bf; }
+.ov .card .type { margin-top: 10px; padding-top: 10px; border-top: 1px dashed #e1e3e8; font-size: 9pt; color: #59606e; }
+.ov .card .type b { color: #1d2433; }
+.ov .foot { margin-top: .5in; padding-top: .3in; border-top: 1px solid #e6e2d8; display: flex; gap: .3in; font-size: 9pt; color: #59606e; line-height: 1.45; }
+.ov .foot div { flex: 1; }
+.ov .foot b { display: block; color: #1d2433; font-size: 9.5pt; margin-bottom: 2px; }
+
+/* ============ STYLE A — GAME DAY ============ */
+.A { --navy: #14284B; --orange: #FF6B1A; --sky: #3FA9F5; --lime: #B8E04A; --paper: #FFFBF4; background: var(--paper); color: #1b2438; font-family: 'Nunito', sans-serif; }
+.A .page { background: var(--paper); }
+.A .run { position: absolute; top: .38in; font: 800 7.5pt/1 'Nunito'; letter-spacing: .16em; text-transform: uppercase; color: #8b93a6; }
+.A .left .run { left: .6in; } .A .right .run { right: .6in; }
+.A .folio { position: absolute; bottom: .38in; width: .42in; height: .42in; border-radius: 50%; background: var(--navy); color: #fff; font: 9pt/.42in 'Lilita One'; text-align: center; }
+.A .left .folio { left: .6in; } .A .right .folio { right: .6in; }
+.A .body p { font-size: 12.5pt; line-height: 1.55; margin-bottom: .62em; }
+.A .body p.dialog { }
+.A .ph { background: repeating-linear-gradient(135deg, #e3ecf8 0 16px, #d7e4f5 16px 32px); }
+.A .ph .ph-label { background: var(--navy); color: #fff; }
+.A .opener-art .ph-label { bottom: 1.6in; }
+.A .stripe { position: absolute; left: -10%; width: 120%; height: .55in; transform: rotate(-6deg); }
+.A .opener-art { position: absolute; inset: 0; }
+.A .chap-badge { position: absolute; top: .55in; left: .55in; z-index: 3; background: var(--orange); color: #fff; font: 13pt/1 'Lilita One'; letter-spacing: .06em; padding: 9px 14px 8px; border-radius: 6px; transform: rotate(-4deg); box-shadow: 0 3px 0 var(--navy); }
+.A .chap-head { position: relative; margin-top: .15in; }
+.A .chap-num { font: 96pt/.8 'Lilita One'; color: transparent; -webkit-text-stroke: 3px var(--navy); position: absolute; right: -.05in; top: -.2in; opacity: .14; }
+.A .sport-tag { display: inline-flex; gap: 6px; align-items: center; background: var(--navy); color: #fff; font: 800 8pt/1 'Nunito'; letter-spacing: .16em; text-transform: uppercase; padding: 6px 10px; border-radius: 99px; }
+.A .sport-tag i { width: 8px; height: 8px; background: var(--lime); border-radius: 50%; }
+.A h2.title { font: 30pt/1 'Lilita One'; color: var(--navy); margin: 12px 0 6px; letter-spacing: .01em; }
+.A h2.title span { color: var(--orange); }
+.A .underline { width: 1.1in; height: 6px; background: var(--orange); border-radius: 3px; margin: 6px 0 18px; box-shadow: .3in 0 0 var(--sky); }
+.A .dropcap::first-letter { font: 46pt/.8 'Lilita One'; float: left; color: var(--orange); margin: 6px 8px 0 0; }
+.A .inline-art { height: 2.15in; border-radius: 12px; margin: 4px 0 14px; border: 3px solid var(--navy); }
+.A .coach { background: var(--navy); color: #fff; border-radius: 14px; padding: 18px 18px 16px; position: relative; }
+.A .coach h3 { font: 19pt/1 'Lilita One'; letter-spacing: .02em; }
+.A .coach h3 span { color: var(--orange); }
+.A .coach .whistle { position: absolute; right: 14px; top: 14px; font: 800 7.5pt/1 'Nunito'; letter-spacing: .14em; color: var(--lime); }
+.A .coach p { font-size: 11.5pt; line-height: 1.5; margin-top: 8px; }
+.A .skill { margin: 16px 0 14px; display: flex; align-items: center; gap: 12px; border: 2.5px dashed var(--orange); border-radius: 12px; padding: 10px 14px; background: #fff3ea; }
+.A .skill .medal { width: .62in; height: .62in; flex: none; border-radius: 50%; background: var(--orange); color: #fff; display: grid; place-items: center; font: 22pt/1 'Lilita One'; box-shadow: inset 0 0 0 4px #ffd2b8; }
+.A .skill small { display: block; font: 800 7.5pt/1 'Nunito'; letter-spacing: .16em; color: #b45318; text-transform: uppercase; }
+.A .skill b { font: 20pt/1.1 'Lilita One'; color: var(--navy); letter-spacing: .03em; }
+.A .playlist h4 { font: 14pt/1 'Lilita One'; color: var(--navy); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+.A .playlist h4::before { content: ""; width: 12px; height: 12px; background: var(--sky); border-radius: 3px; transform: rotate(45deg); }
+.A .playlist ol { list-style: none; counter-reset: q; }
+.A .playlist li { counter-increment: q; font-size: 11.5pt; line-height: 1.42; padding-left: 32px; position: relative; margin-bottom: 8px; }
+.A .playlist li::before { content: counter(q); position: absolute; left: 0; top: 1px; width: 22px; height: 22px; border-radius: 50%; background: var(--sky); color: #fff; font: 11pt/22px 'Lilita One'; text-align: center; }
+.A .challenge { margin-top: 14px; background: var(--lime); border-radius: 12px; padding: 12px 14px; display: flex; gap: 12px; align-items: flex-start; }
+.A .challenge .box { width: 20px; height: 20px; border: 2.5px solid var(--navy); border-radius: 5px; flex: none; margin-top: 2px; background: #fff; }
+.A .challenge p { font-size: 11pt; line-height: 1.42; }
+.A .challenge b { font-family: 'Lilita One'; font-weight: 400; letter-spacing: .03em; font-size: 12pt; color: var(--navy); }
+
+/* ============ STYLE B — COMIC POWER ============ */
+.B { --ink: #121212; --yel: #FFD23F; --red: #EE4266; --blue: #2F80ED; --paper: #FFFDF6; color: var(--ink); font-family: 'Lexend', sans-serif; background: var(--paper); }
+.B .page { background: var(--paper); }
+.B .halftone { background-image: radial-gradient(rgba(0,0,0,.14) 1.3px, transparent 1.6px); background-size: 9px 9px; }
+.B .ph { background: #cfe0fb; background-image: radial-gradient(#9dbff3 2px, transparent 2.4px); background-size: 12px 12px; }
+.B .ph .ph-label { background: var(--ink); color: var(--yel); font-family: 'Lexend'; }
+.B .panel { border: 4px solid var(--ink); border-radius: 4px; box-shadow: 6px 6px 0 var(--ink); }
+.B .run { position: absolute; top: .36in; font: 400 11pt/1 'Bangers'; letter-spacing: .1em; color: #999; }
+.B .left .run { left: .6in; } .B .right .run { right: .6in; }
+.B .folio { position: absolute; bottom: .32in; font: 400 15pt/1 'Bangers'; letter-spacing: .05em; background: var(--yel); border: 3px solid var(--ink); padding: 5px 10px 3px; transform: rotate(-3deg); }
+.B .left .folio { left: .6in; } .B .right .folio { right: .6in; transform: rotate(3deg); }
+.B .body p { font-size: 11.6pt; line-height: 1.6; margin-bottom: .6em; font-weight: 400; }
+.B .sfx { font-family: 'Bangers'; letter-spacing: .04em; color: var(--red); font-size: 1.15em; }
+.B .burst { position: absolute; display: grid; place-items: center; text-align: center; font-family: 'Bangers'; color: var(--ink); }
+.B .burst svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.B .burst span { position: relative; line-height: .9; }
+.B .caption { background: var(--yel); border: 3px solid var(--ink); padding: 10px 12px; font-size: 10.5pt; line-height: 1.45; font-weight: 500; box-shadow: 4px 4px 0 var(--ink); }
+.B .bubble { position: relative; background: #fff; border: 3px solid var(--ink); border-radius: 28px; padding: 14px 18px; font: 600 12pt/1.35 'Lexend'; }
+.B .bubble::after { content: ""; position: absolute; bottom: -20px; left: 40px; border: 10px solid transparent; border-top: 14px solid var(--ink); border-left: 4px solid transparent; }
+.B .bubble::before { content: ""; position: absolute; bottom: -12px; left: 43px; z-index: 2; border: 7px solid transparent; border-top: 10px solid #fff; border-left: 3px solid transparent; }
+.B h2.title { font: 400 44pt/.88 'Bangers'; letter-spacing: .02em; color: var(--ink); }
+.B h2.title .hl { color: var(--red); -webkit-text-stroke: 0; text-shadow: 3px 3px 0 var(--ink); }
+.B .chap-chip { display: inline-block; font: 400 15pt/1 'Bangers'; letter-spacing: .12em; background: var(--blue); color: #fff; border: 3px solid var(--ink); padding: 6px 12px 4px; transform: rotate(-2deg); box-shadow: 3px 3px 0 var(--ink); }
+.B .power { border: 4px solid var(--ink); background: var(--yel); box-shadow: 6px 6px 0 var(--ink); padding: 14px 16px; position: relative; }
+.B .power h3 { font: 400 26pt/1 'Bangers'; letter-spacing: .04em; }
+.B .power h3 .r { color: var(--red); }
+.B .meter { display: flex; gap: 4px; margin: 8px 0 6px; }
+.B .meter i { flex: 1; height: 12px; border: 2.5px solid var(--ink); background: #fff; }
+.B .meter i.on { background: var(--red); }
+.B .power p { font-size: 10.5pt; line-height: 1.5; }
+.B .herotalk { margin-top: 22px; }
+.B .herotalk h4, .B .mission h4 { font: 400 19pt/1 'Bangers'; letter-spacing: .06em; margin-bottom: 10px; }
+.B .herotalk h4 span, .B .mission h4 span { background: var(--ink); color: #fff; padding: 2px 8px 0; }
+.B .q { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 10px; }
+.B .q .n { flex: none; width: 28px; height: 28px; background: var(--blue); color: #fff; border: 2.5px solid var(--ink); border-radius: 50%; font: 400 15pt/24px 'Bangers'; text-align: center; }
+.B .q p { font-size: 10.8pt; line-height: 1.45; padding-top: 2px; }
+.B .mission { margin-top: 18px; border: 4px solid var(--ink); background: #fff; padding: 14px 16px; position: relative; box-shadow: 6px 6px 0 var(--red); }
+.B .mission p { font-size: 10.8pt; line-height: 1.5; }
+.B .stamp { position: absolute; right: -10px; top: -18px; transform: rotate(8deg); background: var(--red); color: #fff; font: 400 12pt/1 'Bangers'; letter-spacing: .1em; padding: 6px 10px 4px; border: 3px solid var(--ink); }
+
+/* ============ STYLE C — CHAMPION JOURNAL (premium minimal) ============ */
+.C { --teal: #0F6E6E; --mint: #DDF2EC; --coral: #FF7A59; --sun: #FFC857; --ink: #1E2A32; --soft: #F6F4EF; color: var(--ink); font-family: 'Atkinson Hyperlegible', sans-serif; background: #fff; }
+.C .page { background: #fff; }
+.C .run { position: absolute; top: .4in; font: 600 8pt/1 'Baloo 2'; letter-spacing: .2em; text-transform: uppercase; color: #9aa5ab; }
+.C .left .run { left: .6in; } .C .right .run { right: .6in; }
+.C .folio { position: absolute; bottom: .4in; font: 700 10pt/1 'Baloo 2'; color: var(--teal); display: flex; align-items: center; gap: 8px; }
+.C .left .folio { left: .6in; } .C .right .folio { right: .6in; flex-direction: row-reverse; }
+.C .folio::after { content: ""; width: .35in; height: 2px; background: var(--coral); border-radius: 2px; }
+.C .body p { font-size: 12.5pt; line-height: 1.6; margin-bottom: .6em; }
+.C .ph { background: radial-gradient(circle at 30% 25%, #fff3d6 0, transparent 45%), radial-gradient(circle at 75% 70%, #cfeee6 0, transparent 55%), #eaf6f2; }
+.C .ph .ph-label { background: #fff; color: var(--teal); box-shadow: 0 2px 10px rgba(15,110,110,.15); }
+.C .kicker { font: 700 9pt/1 'Baloo 2'; letter-spacing: .24em; text-transform: uppercase; color: var(--coral); }
+.C h2.title { font: 800 31pt/1.02 'Baloo 2'; color: var(--teal); margin: 10px 0 14px; letter-spacing: -.01em; }
+.C .meta { display: flex; gap: 8px; margin-bottom: 20px; }
+.C .pill { font: 600 8.5pt/1 'Baloo 2'; letter-spacing: .08em; text-transform: uppercase; padding: 6px 11px 5px; border-radius: 99px; background: var(--mint); color: var(--teal); }
+.C .pill.c { background: #ffe9e2; color: #c04a2b; }
+.C .lede { font-size: 14pt !important; line-height: 1.55 !important; color: var(--teal); font-weight: 700; }
+.C .bigq { font: 700 22pt/1.2 'Baloo 2'; color: var(--teal); position: relative; padding-left: 22px; margin: 8px 0 18px; }
+.C .bigq::before { content: ""; position: absolute; left: 0; top: 6px; bottom: 6px; width: 5px; background: var(--coral); border-radius: 3px; }
+.C .inline-art { height: 2.2in; border-radius: 22px; margin: 2px 0 18px; }
+.C .card { background: var(--soft); border-radius: 18px; padding: 16px 18px; margin-bottom: 14px; }
+.C .card h4 { font: 700 13pt/1 'Baloo 2'; color: var(--teal); display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.C .card h4 i { width: 24px; height: 24px; border-radius: 8px; display: grid; place-items: center; font-style: normal; font-size: 12pt; color: #fff; background: var(--coral); }
+.C .card p { font-size: 11pt; line-height: 1.5; }
+.C .lines { margin-top: 8px; }
+.C .lines div { height: .32in; border-bottom: 1.5px solid #d8dcd7; }
+.C .bigidea { background: var(--teal); color: #fff; border-radius: 18px; padding: 18px 20px; margin-bottom: 14px; position: relative; overflow: hidden; }
+.C .bigidea small { font: 700 8pt/1 'Baloo 2'; letter-spacing: .24em; color: var(--sun); text-transform: uppercase; }
+.C .bigidea p { position: relative; z-index: 1; font: 700 16pt/1.25 'Baloo 2'; margin-top: 6px; }
+.C .bigidea::after { content: ""; position: absolute; right: -45px; top: -45px; width: 100px; height: 100px; border-radius: 50%; background: rgba(255,200,87,.25); }
+.C .wins { display: flex; gap: 8px; margin-top: 10px; }
+.C .wins span { flex: 1; border: 1.5px solid #d8dcd7; border-radius: 12px; padding: 8px 6px; text-align: center; font: 600 9pt/1.2 'Baloo 2'; color: #5d6b72; background: #fff; }
+.C .wins span b { display: block; font-size: 16pt; margin-bottom: 2px; }
+
+.notes { position: absolute; z-index: 60; right: .15in; bottom: .1in; font: 700 7pt/1 'Nunito'; letter-spacing: .12em; text-transform: uppercase; color: rgba(0,0,0,.35); }
+</style>
+</head>
+<body>
+
+<!-- ================= OVERVIEW ================= -->
+<section class="spread ov noshade">
+  <div class="kick">Interior design samples · Ages 8–12 · 6 × 9 in paperback</div>
+  <h1>Three interior styles for<br>Motivational Sports Stories for Kids</h1>
+  <p class="lead">Each style is shown as two sample spreads: a <b>chapter opener</b> and an <b>inside spread with the end-of-chapter activity page</b>. All three are designed as reusable series templates — fonts, colors, page furniture and recurring features stay fixed, while illustrations and the accent color can change from book to book. Grey striped / dotted boxes mark where your illustrations go.</p>
+  <div class="cards">
+    <div class="card">
+      <div class="tag">Style A</div>
+      <h2 style="font-family:'Lilita One';font-weight:400;color:#14284B">Game Day</h2>
+      <div class="feel">Bold, sporty, energetic — like a team jersey</div>
+      <div class="swatches"><i style="background:#14284B"></i><i style="background:#FF6B1A"></i><i style="background:#3FA9F5"></i><i style="background:#B8E04A"></i><i style="background:#FFFBF4"></i></div>
+      <ul>
+        <li>Full-page art with tilted chapter badge</li>
+        <li>Jersey-number chapter numerals</li>
+        <li>“Coach’s Corner”, “Skill Unlocked” medal, “Huddle Up” questions, “Practice Challenge”</li>
+        <li>Easy to recolor per sport or per book</li>
+      </ul>
+      <div class="type"><b>Headings:</b> Lilita One · <b>Body:</b> Nunito 12.5 pt</div>
+    </div>
+    <div class="card">
+      <div class="tag">Style B</div>
+      <h2 style="font-family:'Bangers';font-weight:400;letter-spacing:.04em;color:#121212">Comic Power</h2>
+      <div class="feel">Graphic-novel energy — great for reluctant readers</div>
+      <div class="swatches"><i style="background:#121212"></i><i style="background:#FFD23F"></i><i style="background:#EE4266"></i><i style="background:#2F80ED"></i><i style="background:#FFFDF6"></i></div>
+      <ul>
+        <li>Comic panels, caption boxes, speech bubbles</li>
+        <li>Sound effects (“SWISH!”) inside the story</li>
+        <li>“Power-Up Page”: superpower meter, “Hero Talk”, “Your Mission”</li>
+        <li>Strongest “wow” effect on the shelf</li>
+      </ul>
+      <div class="type"><b>Headings:</b> Bangers · <b>Body:</b> Lexend 11.6 pt</div>
+    </div>
+    <div class="card">
+      <div class="tag">Style C</div>
+      <h2 style="font-family:'Baloo 2';font-weight:800;color:#0F6E6E">Champion Journal</h2>
+      <div class="feel">Premium, calm, modern — parents love it</div>
+      <div class="swatches"><i style="background:#0F6E6E"></i><i style="background:#FF7A59"></i><i style="background:#FFC857"></i><i style="background:#DDF2EC"></i><i style="background:#F6F4EF"></i></div>
+      <ul>
+        <li>Generous white space, rounded art frames</li>
+        <li>Pull quotes for key motivational lines</li>
+        <li>“Big Idea”, reflection prompts with writing lines, “Today’s Win” tracker</li>
+        <li>Most readable — dyslexia-friendly body font</li>
+      </ul>
+      <div class="type"><b>Headings:</b> Baloo 2 · <b>Body:</b> Atkinson Hyperlegible 12.5 pt</div>
+    </div>
+  </div>
+  <div class="foot">
+    <div><b>Readability for 8–12</b>Body text 11.5–12.5 pt, 1.55–1.6 line spacing, short line length (~55–60 characters) and clear paragraph breaks.</div>
+    <div><b>Series-ready</b>Every style is built on master pages and paragraph/character styles, so future titles reuse the same template.</div>
+    <div><b>Fonts</b>All fonts shown are free for commercial use (SIL Open Font License), including KDP print and Kindle.</div>
+  </div>
+</section>
+
+<!-- ================= STYLE A — SPREAD 1 ================= -->
+<section class="spread A">
+  <div class="page full left">
+    <div class="ph opener-art" style="padding-bottom:1in" data-sport="soccer" data-label="Your illustration · Ch. 3 · full page"></div>
+    <div class="chap-badge">CHAPTER 3</div>
+    <div class="stripe" style="bottom:.55in;background:var(--orange);opacity:.95"></div>
+    <div class="stripe" style="bottom:-.45in;height:1.05in;background:var(--navy)"></div>
+  </div>
+  <div class="page right">
+    <div class="run">Chapter 3 · Soccer</div>
+    <div class="chap-head">
+      <div class="chap-num">03</div>
+      <span class="sport-tag"><i></i>Soccer · Never Give Up</span>
+      <h2 class="title">The Kick<br>That <span>Missed</span></h2>
+      <div class="underline"></div>
+    </div>
+    <div class="body">
+      <p class="dropcap">Leo could hear his heart louder than the crowd. The score was tied, the clock had run out, and now everything came down to one penalty kick. <b>His</b> kick.</p>
+      <p>He placed the ball on the white spot and stepped back. Five steps, just like Coach Rivera had taught him.</p>
+      <p>“You’ve practiced this a hundred times,” he whispered. “Just one more.”</p>
+      <p>The whistle blew. Leo ran, swung his leg, and—</p>
+      <p>The ball sailed over the crossbar.</p>
+      <p>For a moment, everything went silent. Then came the groans from the bleachers — and a sound Leo would remember for a long time: the other team cheering.</p>
+      <p>He stared at the grass and wished he could disappear.</p>
+    </div>
+    <div class="folio">27</div>
+  </div>
+</section>
+
+<!-- ================= STYLE A — SPREAD 2 ================= -->
+<section class="spread A">
+  <div class="page left">
+    <div class="run">Motivational Sports Stories for Kids</div>
+    <div class="ph inline-art" data-sport="soccer" data-label="Your illustration · Ch. 3 · half page"></div>
+    <div class="body">
+      <p>That night, Leo sat on his bed with his cleats still on. There was a knock at the door. It was his older sister, Ana.</p>
+      <p>“Rough game?” she asked.</p>
+      <p>“I lost it for everyone,” Leo said. “I’m never taking a penalty again.”</p>
+      <p>Ana sat next to him. “You know what Coach told me when I struck out in the championship game? Missing doesn’t make you a loser. Quitting does.”</p>
+      <p>Leo thought about that for a long time.</p>
+      <p>The next morning, before school, Leo was at the park with a bag of balls. One kick. Then another. Then fifty more.</p>
+      <p>By Saturday his leg ached — but his kicks were landing exactly where he aimed.</p>
+    </div>
+    <div class="folio">30</div>
+  </div>
+  <div class="page right">
+    <div class="run">Chapter 3 · Soccer</div>
+    <div class="coach">
+      <span class="whistle">◆ END OF CHAPTER</span>
+      <h3>Coach’s <span>Corner</span></h3>
+      <p>Every great player has missed a big shot. What makes them great is that they keep showing up to practice the next day.</p>
+    </div>
+    <div class="skill">
+      <div class="medal">★</div>
+      <div><small>Skill unlocked</small><b>RESILIENCE</b></div>
+    </div>
+    <div class="playlist">
+      <h4>Huddle Up</h4>
+      <ol>
+        <li>How did Leo feel after he missed the kick? Have you ever felt that way?</li>
+        <li>What did Ana say that helped him? Who helps you when things go wrong?</li>
+        <li>What is one thing you want to keep practicing, even when it’s hard?</li>
+      </ol>
+    </div>
+    <div class="challenge">
+      <div class="box"></div>
+      <p><b>PRACTICE CHALLENGE</b><br>This week, practice something you find tricky for 10 minutes a day. Tick the box when you finish!</p>
+    </div>
+    <div style="margin-top:16px;border-left:6px solid var(--orange);padding:4px 0 4px 14px;font:16pt/1.2 'Lilita One';color:var(--navy)">“Champions aren’t the ones who never fall. They’re the ones who get back up.”</div>
+    <div class="folio">31</div>
+  </div>
+</section>
+
+<!-- ================= STYLE B — SPREAD 1 ================= -->
+<section class="spread B">
+  <div class="page left" style="padding:.55in .6in .75in .5in">
+    <div class="ph panel" style="position:absolute;left:.45in;right:.6in;top:.45in;bottom:.9in" data-sport="basketball" data-label="Your illustration · Ch. 5 · full panel"></div>
+    <div class="burst" style="left:.2in;top:.2in;width:1.75in;height:1.75in;z-index:3;transform:rotate(-10deg)">
+      <svg viewBox="0 0 100 100"><polygon fill="#FFD23F" stroke="#121212" stroke-width="3" stroke-linejoin="round" points="50,2 58,22 78,8 74,31 97,30 80,46 98,60 75,64 84,86 62,76 55,98 46,78 28,94 30,70 6,74 20,56 2,40 25,36 14,14 38,24"/></svg>
+      <span style="font-size:15pt;letter-spacing:.08em">CHAPTER<br><b style="font-size:40pt;font-weight:400;color:#EE4266;text-shadow:2px 2px 0 #121212">5</b></span>
+    </div>
+    <div class="folio">43</div>
+  </div>
+  <div class="page right halftone" style="padding-top:.75in">
+    <div class="run">Chapter 5 · Basketball</div>
+    <span class="chap-chip">Basketball · Courage</span>
+    <h2 class="title" style="margin:16px 0 18px">Ten<br>Seconds<br>of <span class="hl">Brave</span></h2>
+    <div class="caption" style="margin-bottom:18px">Maya was the fastest player on the Hornets. Fast feet. Fast hands. Fast passes. But there was one thing she couldn’t do fast at all…</div>
+    <div class="body" style="background:var(--paper);padding:2px 0">
+      <p>…speak up.</p>
+      <p>When Coach Bell asked who wanted the last shot, Maya’s hand stayed glued to her side. Every time. Her voice just hid somewhere deep inside her sneakers.</p>
+      <p>Then came the final game of the season. The Hornets were down by one point, and the gym was so loud the floor shook. Coach Bell called a time-out and looked at every player.</p>
+    </div>
+    <div class="bubble" style="margin-top:6px;width:84%;margin-left:auto">“Ten seconds left. Who wants the last shot?”</div>
+    <div class="folio">44</div>
+  </div>
+</section>
+
+<!-- ================= STYLE B — SPREAD 2 ================= -->
+<section class="spread B">
+  <div class="page left">
+    <div class="run">Motivational Sports Stories for Kids</div>
+    <div class="ph panel" style="height:2.3in;margin:2px 4px 22px 0" data-sport="basketball" data-label="Your illustration · Ch. 5 · panel"></div>
+    <div class="body">
+      <p>Maya’s heart thumped. Her mouth was dry. Then, before she could stop herself, she heard a voice — <b>her</b> voice.</p>
+      <p>“I’m open! Pass it to me!”</p>
+      <p>Jada spun and flicked the ball across the court. Three seconds. Two. Maya jumped, let it fly, and…</p>
+      <p style="text-align:center;font-size:30pt;line-height:1;margin:6px 0 10px" class="sfx">SWISH!</p>
+      <p>The team piled on top of her. But the best part wasn’t the basket. It was finally hearing her own voice out loud.</p>
+      <p>“I always knew you had it in you,” Coach Bell said later, smiling. “You just needed to hear it yourself.”</p>
+    </div>
+    <div class="folio">46</div>
+  </div>
+  <div class="page right">
+    <div class="run">Chapter 5 · Power-Up Page</div>
+    <div class="power">
+      <span class="stamp">POWER-UP!</span>
+      <h3>Superpower: <span class="r">COURAGE</span></h3>
+      <div class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
+      <p>Being brave doesn’t mean you’re not scared. It means you feel scared <b>and do it anyway</b>.</p>
+    </div>
+    <div class="herotalk">
+      <h4><span>HERO TALK</span></h4>
+      <div class="q"><div class="n">1</div><p>Why was it so hard for Maya to speak up?</p></div>
+      <div class="q"><div class="n">2</div><p>What changed in the last ten seconds of the game?</p></div>
+      <div class="q"><div class="n">3</div><p>When is a time you were brave even though you felt nervous?</p></div>
+    </div>
+    <div class="mission">
+      <h4><span>YOUR MISSION</span></h4>
+      <p>This week, raise your hand <b>once</b> when you usually wouldn’t — in class, at practice, or at home. Draw a star here when you complete it!</p>
+      <div style="height:.55in;border:2.5px dashed #121212;margin-top:10px;border-radius:4px"></div>
+    </div>
+    <div style="margin-top:22px;display:flex;align-items:center;gap:8px">
+      <span style="font:400 13pt/1 'Bangers';letter-spacing:.06em;margin-right:4px">BADGES<br>COLLECTED</span>
+      <i style="width:.42in;height:.42in;border-radius:50%;border:3px solid #121212;background:#2F80ED;color:#fff;display:grid;place-items:center;font:400 13pt/1 'Bangers';font-style:normal">1</i>
+      <i style="width:.42in;height:.42in;border-radius:50%;border:3px solid #121212;background:#FFD23F;display:grid;place-items:center;font:400 13pt/1 'Bangers';font-style:normal">2</i>
+      <i style="width:.42in;height:.42in;border-radius:50%;border:3px solid #121212;background:#2F80ED;color:#fff;display:grid;place-items:center;font:400 13pt/1 'Bangers';font-style:normal">3</i>
+      <i style="width:.42in;height:.42in;border-radius:50%;border:3px solid #121212;background:#FFD23F;display:grid;place-items:center;font:400 13pt/1 'Bangers';font-style:normal">4</i>
+      <i style="width:.42in;height:.42in;border-radius:50%;border:3px solid #121212;background:#EE4266;color:#fff;display:grid;place-items:center;font:400 13pt/1 'Bangers';font-style:normal;transform:scale(1.15)">5</i>
+      <i style="width:.42in;height:.42in;border-radius:50%;border:3px dashed #999;display:grid;place-items:center;font:400 13pt/1 'Bangers';font-style:normal;color:#999">6</i>
+    </div>
+    <div class="folio">47</div>
+  </div>
+</section>
+
+<!-- ================= STYLE C — SPREAD 1 ================= -->
+<section class="spread C">
+  <div class="page full left" style="background:var(--mint)">
+    <div class="ph" style="position:absolute;inset:.55in .55in 1.35in .55in;border-radius:28px" data-sport="swim" data-label="Your illustration · Ch. 8 · full page"></div>
+    <div style="position:absolute;left:.55in;right:.55in;bottom:.5in;display:flex;align-items:flex-end;justify-content:space-between">
+      <div style="font:800 64pt/.8 'Baloo 2';color:var(--teal)">08</div>
+      <div style="font:700 9pt/1.3 'Baloo 2';letter-spacing:.22em;text-transform:uppercase;color:var(--teal);text-align:right">Chapter eight<br><span style="color:var(--coral)">Swimming</span></div>
+    </div>
+  </div>
+  <div class="page right">
+    <div class="run">The Last Lap</div>
+    <div style="height:.25in"></div>
+    <div class="kicker">Chapter 8</div>
+    <h2 class="title">The Last Lap</h2>
+    <div class="meta"><span class="pill">Swimming</span><span class="pill c">Personal best</span></div>
+    <div class="body">
+      <p class="lede">Sam was always the last one out of the pool. Not because he loved swimming the most — because he was the slowest.</p>
+      <p>At every meet, he’d touch the wall and look up to see the other swimmers already wrapped in their towels.</p>
+      <p>“Why do I even bother?” he asked his mom one evening.</p>
+      <p>She handed him a small notebook. “Stop racing them,” she said. “Start racing <i>you</i>.”</p>
+      <p>Sam opened it. On the first page, in his mom’s neat handwriting, it said: <b>My Times</b>.</p>
+      <p>The next day he swam his four laps, climbed out, and wrote a number on the very first line: 54 seconds. It didn’t look like much. But it was a start.</p>
+    </div>
+    <div class="folio">71</div>
+  </div>
+</section>
+
+<!-- ================= STYLE C — SPREAD 2 ================= -->
+<section class="spread C">
+  <div class="page left">
+    <div class="run">Motivational Sports Stories for Kids</div>
+    <div class="body">
+      <p>So Sam started writing down his times. Every practice. Every lap.</p>
+      <p>Week by week, the numbers began to shrink. 52 seconds. 50. 48.</p>
+    </div>
+    <div class="bigq">Stop racing them.<br>Start racing you.</div>
+    <div class="ph inline-art" data-sport="swim" data-label="Your illustration · Ch. 8 · half page"></div>
+    <div class="body">
+      <p>At the final meet, Sam finished last again. But when he looked at the board, he grinned so wide his goggles fogged up: <b>46 seconds</b>. His best time ever.</p>
+      <p>Nobody else noticed. But Sam did — and that was the only race that mattered.</p>
+    </div>
+    <div class="folio">74</div>
+  </div>
+  <div class="page right">
+    <div class="run">My Champion Journal</div>
+    <div class="bigidea">
+      <small>The big idea</small>
+      <p>Winning isn’t always about being first. It’s about being better than you were yesterday.</p>
+    </div>
+    <div class="card">
+      <h4><i>?</i>Think about it</h4>
+      <p>What is something you are better at today than you were last year?</p>
+      <div class="lines"><div></div><div></div></div>
+    </div>
+    <div class="card">
+      <h4><i style="background:var(--teal)">✎</i>My next goal</h4>
+      <p>Pick one skill and write down how you’ll practice it this week.</p>
+      <div class="lines"><div></div><div></div></div>
+    </div>
+    <div class="card" style="margin-bottom:0">
+      <h4><i style="background:var(--sun);color:var(--ink)">★</i>Today’s win</h4>
+      <div class="wins"><span><b>😊</b>Proud</span><span><b>💪</b>Stronger</span><span><b>🚀</b>Faster</span><span><b>🧠</b>Smarter</span></div>
+    </div>
+    <div class="folio">75</div>
+  </div>
+</section>
+
+<script>
+const icons = {
+  soccer: `<svg class="icon" viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="#fff" stroke="COLOR" stroke-width="4"/><polygon points="50,33 66,45 60,64 40,64 34,45" fill="COLOR"/><g stroke="COLOR" stroke-width="3.5" fill="none"><line x1="50" y1="33" x2="50" y2="8"/><line x1="66" y1="45" x2="90" y2="38"/><line x1="60" y1="64" x2="74" y2="85"/><line x1="40" y1="64" x2="26" y2="85"/><line x1="34" y1="45" x2="10" y2="38"/></g></svg>`,
+  basketball: `<svg class="icon" viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="#FF8A3D" stroke="COLOR" stroke-width="4"/><g stroke="COLOR" stroke-width="3.5" fill="none"><line x1="50" y1="6" x2="50" y2="94"/><line x1="6" y1="50" x2="94" y2="50"/><path d="M20 18 Q40 50 20 82"/><path d="M80 18 Q60 50 80 82"/></g></svg>`,
+  swim: `<svg class="icon" viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="#fff" stroke="COLOR" stroke-width="4"/><g stroke="COLOR" stroke-width="4" fill="none" stroke-linecap="round"><path d="M18 46 q8 -8 16 0 t16 0 t16 0 t16 0"/><path d="M18 60 q8 -8 16 0 t16 0 t16 0 t16 0"/></g><circle cx="58" cy="32" r="6" fill="COLOR"/></svg>`
+};
+const col = { A: '#14284B', B: '#121212', C: '#0F6E6E' };
+document.querySelectorAll('.ph').forEach(el => {
+  const s = el.closest('.spread');
+  const c = s.classList.contains('A') ? col.A : s.classList.contains('B') ? col.B : col.C;
+  el.insertAdjacentHTML('beforeend', icons[el.dataset.sport].replaceAll('COLOR', c) + `<span class="ph-label">${el.dataset.label}</span>`);
+});
+</script>
+</body>
+</html>
